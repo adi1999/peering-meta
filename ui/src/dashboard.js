@@ -9,6 +9,7 @@ import "chart.js/auto";
 import { Line, Radar } from "react-chartjs-2";
 import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Table from "./table.js";
 
 import axios from "axios";
 
@@ -71,7 +72,7 @@ const Dashboard = () => {
         // setPolygonData(polygon);
         setApiData(response.data);
         setData(response.data.dataframe);
-        console.log(response);
+        console.log(data);
       })
       .catch((error) => {
         console.error("Error fetching peering data: ", error);
@@ -294,7 +295,8 @@ const Dashboard = () => {
 
         <div className="content-wrapper content-wrapper--with-bg">
           <div className="page-content">
-            <Line options={options} key={chartKey} data={chartData} />
+            {/* <Line options={options} key={chartKey} data={chartData} /> */}
+            <Table data={data} />
           </div>
           <div className="page-content">
             {/* <Radar options={RadarOptions} data={RadarChartData} /> */}
