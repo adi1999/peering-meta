@@ -496,7 +496,7 @@ main.l-main .content-wrapper--with-bg .page-content {
   background: #fff;
   border-radius: 3px;
   border: 1px solid #d0d0d0;
-  padding: 25px;
+  padding: 10px;
 }
 main.l-main .page-title {
   font-weight: 400;
@@ -668,4 +668,40 @@ html {
 
 .row {
   margin-top: 40px;
+}
+
+table,
+th,
+td {
+  color: #555;
+  text-align: left;
+  padding: 0.5em;
+  border: thin solid #ccc;
+  border-collapse: collapse;
+}
+caption {
+  padding: 0.3em 0.5em;
+  border-radius: 0.3em 0.3em 0 0;
+  font-size: large;
+  color: #fff;
+  text-align: left;
+  background: #333;
+}
+td[colspan="2"] {
+  text-align: right;
+  font-weight: bold;
+}
+tfoot {
+  background: #eee;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+}
+
+th {
+  background-color: #102c58;
+  color: white;
+  font-weight: bold;
 }
