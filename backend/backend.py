@@ -13,7 +13,7 @@ import itertools
 import geopandas as gpd
 
 app = Flask(__name__)
-
+CORS(app)
 
 # Mock data for ISPs
 isps = ['ISP1', 'ISP2', 'ISP3']
@@ -265,5 +265,9 @@ def calculate_scores():
         return jsonify(response_data)
     except Exception as e:
         return jsonify({"error": str(e)})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 

@@ -62,17 +62,8 @@ const Dashboard = () => {
         candidateISP,
       })
       .then((response) => {
-        // const { contracts, requestor, candidate, combined, polygon } =
-        //   response.data;
-        // // Update state with response data
-        // setContractIds(contracts);
-        // setRequestorScores(requestor);
-        // setCandidateScores(candidate);
-        // setCombinedScores(combined);
-        // setPolygonData(polygon);
         setApiData(response.data);
         setData(response.data.dataframe);
-        console.log(data);
       })
       .catch((error) => {
         console.error("Error fetching peering data: ", error);
@@ -99,25 +90,6 @@ const Dashboard = () => {
   const centerCoordinates = [20.5937, 78.9629];
   const zoomLevel = 1;
 
-  // const isp1Coordinates = [
-  //   [39.7392, -104.9903],
-  //   [32.7767, -96.797],
-  //   [25.7617, -80.1918],
-  //   [41.8781, -87.6298],
-  //   [39.0438, -77.4874],
-  //   [34.0522, -118.2437],
-  //   [37.3541, -121.9552],
-  // ];
-
-  // const isp2Coordinates = [
-  //   [39.7392, -104.9903],
-  //   [32.7767, -96.797],
-  //   [25.7617, -80.1918],
-  //   [40.7128, -74.006],
-  //   [51.5074, -0.1278],
-  //   [-33.8688, 151.2093],
-  // ];
-
   const isp1Coordinates = [
     [26.8467, 80.9462],
     [25.3176, 82.9739],
@@ -128,15 +100,6 @@ const Dashboard = () => {
     [27.1767, 78.0081],
     [25.3176, 82.9739],
   ];
-
-  // useEffect(() => {
-  //   const combinedCoordinates = [...isp1Coordinates, ...isp2Coordinates].filter(
-  //     (coord, index, self) =>
-  //       index === self.findIndex((c) => c[0] === coord[0] && c[1] === coord[1])
-  //   );
-
-  //   setCoverage(combinedCoordinates);
-  // }, [isp1Coordinates, isp2Coordinates]);
 
   const chartData = {
     labels: contractIds,

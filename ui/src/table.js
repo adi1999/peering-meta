@@ -7,6 +7,7 @@ export default function CustomizedTables(data) {
   console.log(data);
   useEffect(() => {
     setRows(data.data);
+    console.log(data.data);
     setCols(Object.keys(data.data));
   }, [data]);
 
@@ -14,43 +15,24 @@ export default function CustomizedTables(data) {
     <table>
       <thead>
         <tr>
-          <th>Column1</th>
-          <th>Column2</th>
-          <th>Column3</th>
-          <th>Column4</th>
-          <th>Column5</th>
+          <th>Willingness Score</th>
+          <th>Affinity Score</th>
+          <th>Rank</th>
+          <th>Location</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-        </tr>
-        <tr>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-        </tr>
-        <tr>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-        </tr>
-        <tr>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-          <td>Demo value</td>
-        </tr>
+        {rows.map((row) => {
+          return (
+            <tr>
+              <td>{row.Affinity_Score?.toFixed(4)}</td>
+              <td>{row.Decision_willingness_score?.toFixed(4)}</td>
+              <td>{row.Order}</td>
+              <td>{row.peering_location}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
