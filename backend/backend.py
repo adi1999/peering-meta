@@ -47,9 +47,6 @@ isp2Coordinates = [
     [25.3176, 82.9739],
 ]
 
-willingness_score = 0.91
-affinity_score = 0.62
-location = "Pune"
 
 
 #ACTUAL CODE
@@ -239,6 +236,13 @@ def calculate_scores():
         top_5_df = profile_df[profile_df['Order'].between(1, 5)]
 
 
+        best_candidate = top_5_df[top_5_df['Order'] == 1]
+
+
+        willingness_score = best_candidate['Combine_willingness_score'].iloc[0]
+        affinity_score = best_candidate['Affinity_Score'].iloc[0]
+        location = best_candidate['peering_location'].iloc[0]
+
 
         ws = [0.8, 0.6, 0.4, 0.9]
 
@@ -246,9 +250,9 @@ def calculate_scores():
 
         cs = [0.81, 0.34, 0.56, 0.32]
 
-        willingness_score = 0.91
-        affinity_score = 0.62
-        location = "Pune"
+        # willingness_score = 0.91
+        # affinity_score = 0.62
+        # location = "Pune"
 
         response_data = {
             "ws":ws,
@@ -267,7 +271,7 @@ def calculate_scores():
         return jsonify({"error": str(e)})
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
 
 

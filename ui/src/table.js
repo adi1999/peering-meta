@@ -7,7 +7,6 @@ export default function CustomizedTables(data) {
   console.log(data);
   useEffect(() => {
     setRows(data.data);
-    console.log(data.data);
   }, [data]);
 
   return (
@@ -25,8 +24,8 @@ export default function CustomizedTables(data) {
         {rows.map((row) => {
           return (
             <tr>
-              <td>{row.Affinity_Score?.toFixed(4)}</td>
               <td>{row.Decision_willingness_score?.toFixed(4)}</td>
+              <td>{row.Affinity_Score?.toFixed(4)}</td>
               <td>{row.Order}</td>
               <td>{row.peering_location}</td>
             </tr>

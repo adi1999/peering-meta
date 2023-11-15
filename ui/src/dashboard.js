@@ -301,7 +301,7 @@ const Dashboard = () => {
                 <div class="c-metric-container c-metric-container--green">
                   <div class="c-metric">
                     <span class="c-metric__hero">
-                      {apiData?.affinity_score}
+                      {apiData?.affinity_score.toFixed(4)}
                     </span>
                     <span class="c-metric__secondary">Affinity Score</span>
                   </div>
@@ -314,7 +314,7 @@ const Dashboard = () => {
                 <div class="c-metric-container c-metric-container--green">
                   <div class="c-metric">
                     <span class="c-metric__hero">
-                      {apiData?.willingness_score}
+                      {apiData?.willingness_scoretoFixed(4)}
                     </span>
                     <span class="c-metric__secondary">Willingness Score</span>
                   </div>
