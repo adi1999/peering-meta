@@ -8,7 +8,6 @@ export default function CustomizedTables(data) {
   useEffect(() => {
     setRows(data.data);
     console.log(data.data);
-    setCols(Object.keys(data.data));
   }, [data]);
 
   return (
