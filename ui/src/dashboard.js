@@ -43,7 +43,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Fetch ISP data from the backend API and populate dropdowns
     axios
-      .get("http://127.0.0.1:5000/api/isps")
+      .get("https://peering.onrender.com/api/isps")
       .then((response) => {
         // Update state with response data
         setIsps(response.data.isps);
@@ -57,7 +57,7 @@ const Dashboard = () => {
   const handleCheckClick = () => {
     // Make an API call to get contract IDs and scores
     axios
-      .post("http://127.0.0.1:5000/api/peering", {
+      .post("https://peering.onrender.com/api/peering", {
         requestorISP,
         candidateISP,
       })
